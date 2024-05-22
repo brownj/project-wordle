@@ -5,7 +5,7 @@ import { WORDS } from '../../data';
 import GameInput from '../GameInput';
 import GuessList from '../GuessList';
 import GameEndBanner from '../GameEndBanner';
-//import NUM_OF_GUESSES_ALLOWED from '../../constants';
+import { NUM_OF_GUESSES_ALLOWED } from '../../constants';
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
@@ -40,7 +40,7 @@ function Game() {
       setDisableGameInput(true);
     }
 
-    if (newGuessCount >= 6) {
+    if (newGuessCount >= NUM_OF_GUESSES_ALLOWED) {
       setGameLost(true);
       setDisableGameInput(true);
     }
